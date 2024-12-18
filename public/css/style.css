@@ -1,0 +1,509 @@
+/* Général */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2b5876, #4e4376);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #4e4376;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffb400;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f56342;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    background: #1c1c1c;
+    color: #aaa;
+    padding: 10px 0;
+    margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #ffb400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+}
+
+/* Conteneur principal */
+.artists-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.artists-container ul {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.artists-container ul li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    list-style: none;
+}
+
+.artists-container ul li:hover {
+    transform: translateY(-5px);
+}
+
+.artists-container ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.artists-container ul li a:hover {
+    color: #ffb400;
+}
+
+.artists-container .add-artist-link {
+    display: inline-block;
+    margin-top: 20px;
+    align-self: center;
+    background: #ffb400;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.artists-container .add-artist-link:hover {
+    background: #f56342;
+    transform: scale(1.05);
+}
+
+/* Formulaires */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffb400;
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input,
+form textarea {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding-right: 15px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background: #ffb400;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #f56342;
+}
+
+/* show.php */
+.show-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.show-container h1 {
+    color: #ffb400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.show-container p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.action-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-links a,
+.action-links form button {
+    background-color: #ffb400;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-links a:hover,
+.action-links form button:hover {
+    background-color: #f56342;
+    transform: scale(1.05);
+}
+
+.action-links form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Artworks */
+
+/* Conteneur principal pour les œuvres */
+.artworks-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.artworks-container ul {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.artworks-container ul li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    list-style: none;
+}
+
+.artworks-container ul li:hover {
+    transform: translateY(-5px);
+}
+
+.artworks-container ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.artworks-container ul li a:hover {
+    color: #ffb400;
+}
+
+.artworks-container .add-artwork-link {
+    display: inline-block;
+    margin-top: 20px;
+    align-self: center;
+    background: #ffb400;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.artworks-container .add-artwork-link:hover {
+    background: #f56342;
+    transform: scale(1.05);
+}
+
+/* Catégories */
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.categories-container h1 {
+    text-align: center;
+    color: #ffb400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+}
+
+.categories-container ul {
+    padding: 0;
+    margin: 0;
+}
+
+.categories-container ul li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    list-style: none;
+}
+
+.categories-container ul li:hover {
+    transform: translateY(-5px);
+}
+
+.categories-container ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.categories-container ul li a:hover {
+    color: #ffb400;
+}
+
+.categories-container .add-category-link {
+    display: inline-block;
+    margin-top: 20px;
+    align-self: center;
+    background: #ffb400;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.categories-container .add-category-link:hover {
+    background: #f56342;
+    transform: scale(1.05);
+}
+
+/* Style pour se connecter en tant que visiteur */
+
+.visitor-option a {
+    color: #ffb400;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #ffb400;
+    border-radius: 5px;
+    background: transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.visitor-option a:hover {
+    color: #fff;
+    background-color: #ffb400;
+    border-color: #f56342;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Style pour le User greeting */
+
+.user-greeting {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(135deg, #ffb400, #f56342);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
+    top: 20px;
+    animation: appear 1.5s ease-out, glow 3s infinite alternate;
+    display: inline-block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), 0 0 15px #ffb400, 0 0 30px #f56342;
+    }
+
+    to {
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 25px #ffb400, 0 0 40px #f56342;
+    }
+}
+
+/* Style pour les logs */
+.logs-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logs-container h1 {
+    text-align: center;
+    color: #ffb400;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    animation: bounce 1.5s infinite alternate ease-in-out;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(43, 88, 118, 0.9), rgba(78, 67, 118, 0.9));
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.logs-table thead {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffb400;
+}
+
+.logs-table th,
+.logs-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logs-table tbody tr {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.logs-table tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.logs-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+.logs-table tbody tr:hover td {
+    color: #ffb400;
+    text-shadow: 0 0 5px rgba(255, 180, 0, 0.7);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
